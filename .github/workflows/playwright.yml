@@ -1,12 +1,12 @@
-name: Playwright Tests
+name: simple-ci-cd
 on:
     push:
-        branches: [master, develop, staging, release, production]
+        branches: [main, master, develop, staging, release, production]
     pull_request:
-        branches: [master, develop, staging, release, production]
+        branches: ['*']
 jobs:
     test:
-        timeout-minutes: 5
+        timeout-minutes: 10
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
@@ -17,11 +17,37 @@ jobs:
               run: yarn install --frozen-lockfile
             - name: Install Playwright Browsers
               run: npx playwright install --with-deps
-            - name: Run Playwright tests
-              run: npx playwright test
+            - name: Run lint-staged
+              run: npx lint-staged
+            - name: Build the project
+              run: yarn build
+            - name: Run tests
+              run: yarn test
             - uses: actions/upload-artifact@v4
               if: always()
               with:
                   name: playwright-report
                   path: playwright-report/
                   retention-days: 30
+
+    deploy-dev:
+        if: github.ref_name == 'develop' || contains(github.ref_name, 'release')
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to Development
+              run: |
+                  echo "Development deployment started..."
+                  # Add your development deployment commands here
+                  echo "Development deployment completed."
+
+    deploy-prod:
+        if: github.ref_name == 'production'
+        needs: test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploy to Production
+              run: |
+                  echo "Production deployment started..."
+                  # Add your production deployment commands here
+                  echo "Production deployment completed."

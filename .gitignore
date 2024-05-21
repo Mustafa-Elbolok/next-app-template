@@ -40,6 +40,7 @@ next-env.d.ts
 
 .vscode
 .husky
+.github
 /test-results/
 /playwright-report/
 /blob-report/

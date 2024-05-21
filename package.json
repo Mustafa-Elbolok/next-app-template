@@ -1,6 +1,6 @@
 {
-    "name": "wasp",
-    "version": "0.1.0",
+    "name": "next-app-template",
+    "version": "1.0.0",
     "private": true,
     "license": "GPL-3.0-only",
     "contributors": [
@@ -8,11 +8,6 @@
             "name": "Mustafa Elbolok",
             "email": "mustafa.elbolok1@gmail.com",
             "url": "https://mustafaelbolok.vercel.app"
-        },
-        {
-            "name": "Eslam Khalaf",
-            "email": "eslamkhalaf191@gmail.com",
-            "url": "https://eslamkhalaf.vercel.app"
         }
     ],
     "scripts": {
@@ -39,6 +34,7 @@
         "@types/node": "^20",
         "@types/react": "^18",
         "@types/react-dom": "^18",
+        "dotenv": "^16.4.5",
         "eslint": "^8",
         "eslint-config-next": "14.2.3",
         "husky": "^9.0.11",

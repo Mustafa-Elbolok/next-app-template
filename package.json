@@ -12,6 +12,9 @@
             "url": "https://mustafaelbolok.vercel.app"
         }
     ],
+    "publishConfig": {
+        "mustafa.elbolok:registry": "https://npm.pkg.github.com"
+    },
     "scripts": {
         "dev": "next dev",
         "build": "next build",

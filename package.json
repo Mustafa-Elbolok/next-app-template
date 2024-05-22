@@ -16,7 +16,7 @@
         "lint": "next lint",
         "prepare": "husky",
         "unit-test": "npx playwright test",
-        "test": "npx lint-staged && yarn build && yarn test"
+        "test": "npx lint-staged && npm run build && npm run unit-test"
     },
     "dependencies": {
         "class-variance-authority": "^0.7.0",

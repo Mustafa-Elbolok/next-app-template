@@ -15,9 +15,10 @@ const libre_franklin = Libre_Franklin({
 });
 
 export const metadata: Metadata = {
-    title: 'Wasp',
-    description:
-        'Social media platform where people can post short articles known as stings, making it easier to get in touch with friends and follow news!',
+    title: 'safe-next-app',
+    description: `Simple template with github worlflow actions and husky setup for ci/cd locally and remotely ensuring no build issues appeares anywhere,
+        and playwright for tests,
+        and ready environment using editorconfig and prettier and gitattibutes to ensure strict code style.`,
     icons: {
         shortcut: '/logo.png',
         apple: '/logo.png',

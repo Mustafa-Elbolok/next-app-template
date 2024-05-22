@@ -1,8 +1,10 @@
 {
-    "name": "next-app-template",
+    "name": "safe-next-app",
     "version": "1.0.0",
-    "private": true,
     "license": "GPL-3.0-only",
+    "bin": {
+        "safe-next-app": "./bin/cli.js"
+    },
     "contributors": [
         {
             "name": "Mustafa Elbolok",

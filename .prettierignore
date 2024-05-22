@@ -1,0 +1,11 @@
+# Distentions
+node_modules
+
+# Files
+.env.*
+
+# Git files
+
+.gitignore
+.gitattributes
+
